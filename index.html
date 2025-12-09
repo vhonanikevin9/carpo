@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avery Maintenance | Construction & Supply Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a3a8f;
+            --secondary: #2563eb;
+            --dark: #0d1b3e;
+            --light: #f8f9fa;
+            --gray: #6c757d;
+            --transition: all 0.3s ease;
+            --blue-light: #3b82f6;
+            --blue-dark: #1e40af;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #f5f7ff;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 10px 0;
+            transition: var(--transition);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+            margin-bottom: 5px;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            text-align: center;
+        }
+
+        .logo-text span {
+            color: var(--blue-light);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue-light);
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--blue-light);
+            bottom: -5px;
+            left: 0;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px;
+            background: linear-gradient(rgba(26, 58, 143, 0.85), rgba(30, 64, 175, 0.9)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--blue-light);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--blue-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--dark);
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--blue-light);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .commitment-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 2px solid var(--blue-light);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .commitment-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            text-align: center;
+            padding: 25px 20px;
+            border-radius: 8px;
+            background-color: #f0f4ff;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .highlight-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--blue-light);
+        }
+
+        .highlight-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: #f5f7ff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: relative;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--blue-light);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            display: inline-block;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card ul {
+            text-align: left;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        /* Floating Images Above Services */
+        .floating-images {
+            position: relative;
+            margin: 0 auto 50px;
+            max-width: 1200px;
+            height: 200px;
+        }
+
+        .floating-img {
+            position: absolute;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            transition: all 0.5s ease;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .floating-img:hover {
+            transform: scale(1.05);
+            z-index: 100;
+        }
+
+        .floating-img-1 {
+            width: 150px;
+            height: 150px;
+            top: 30px;
+            left: 20%;
+            animation: float1 6s ease-in-out infinite;
+        }
+
+        .floating-img-2 {
+            width: 160px;
+            height: 160px;
+            top: 20px;
+            left: 50%;
+            animation: float2 7s ease-in-out infinite;
+        }
+
+        .floating-img-3 {
+            width: 140px;
+            height: 140px;
+            top: 60px;
+            left: 75%;
+            animation: float3 8s ease-in-out infinite;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            height: 250px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 58, 143, 0.9);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .lightbox-img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            padding: 0 20px;
+        }
+
+        .lightbox-prev,
+        .lightbox-next {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .lightbox-prev:hover,
+        .lightbox-next:hover {
+            color: var(--blue-light);
+        }
+
+        /* Sponsors/Partners */
+        .partners {
+            padding: 80px 0;
+            background-color: #f5f7ff;
+        }
+
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 2rem;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .partner-logo {
+            max-width: 160px;
+            max-height: 80px;
+            opacity: 0.9;
+            transition: var(--transition);
+            object-fit: contain;
+            filter: none !important;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        .partner-logo:hover {
+            opacity: 1;
+            transform: scale(1.05) translateY(-5px);
+            animation-play-state: paused;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(rgba(26, 58, 143, 0.95), rgba(13, 27, 62, 0.95)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 2rem;
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 1.2rem;
+            color: var(--blue-light);
+        }
+
+        .contact-item h4,
+        .contact-item p,
+        .contact-info h4,
+        .contact-info p {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            background-color: var(--blue-light);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .map-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            height: 400px;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background-color: #e9ecef;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links h4, .footer-services h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-links ul, .footer-services ul {
+            list-style: none;
+        }
+
+        .footer-links li, .footer-services li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a, .footer-services a {
+            color: #b0b7c3;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover, .footer-services a:hover {
+            color: var(--blue-light);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b0b7c3;
+            font-size: 0.9rem;
+        }
+
+        /* Floating Elements */
+        .floating-icon {
+            position: fixed;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            transition: var(--transition);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .floating-whatsapp {
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .floating-facebook {
+            bottom: 100px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #1877F2;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        /* Animations */
+        @keyframes float1 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-25px); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content, .contact-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .floating-images {
+                height: 150px;
+            }
+            
+            .floating-img-1, .floating-img-2, .floating-img-3 {
+                position: relative;
+                width: 120px;
+                height: 120px;
+                margin: 10px auto;
+                left: auto;
+                top: auto;
+                display: block;
+                float: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .about-highlights {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .highlight-item {
+                padding: 20px 15px;
+            }
+            
+            .partners-grid {
+                grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .floating-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+            
+            .floating-whatsapp {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .floating-facebook {
+                bottom: 80px;
+                right: 20px;
+            }
+            
+            .logo-img {
+                height: 60px;
+            }
+            
+            .logo-text {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .services-grid, .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .floating-images {
+                height: auto;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+            
+            .logo-img {
+                height: 50px;
+            }
+            
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .commitment-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#home" class="logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.23 (2)_upscaled (1).png" alt="Avery Maintenance Logo" class="logo-img">
+                <div class="logo-text">AVERY MAINTENANCE</div>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#partners">Partners</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Construction, Supply & Maintenance Solutions</h1>
+            <p>Averys Maintenance has different departments: Supply, Construction Management and Maintenance. For more than 3 years, day to day general maintenance, office equipment supply and construction maintenance. Our company has been providing expert service to customers in the public and private sectors, working to the highest industry standards.</p>
+            <div class="hero-btns">
+                <a href="#services" class="btn btn-primary">Our Services</a>
+                <a href="#contact" class="btn btn-secondary">Get a Free Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Us</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="commitment-card">
+                    <div class="commitment-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Our Commitment</h3>
+                    <p>We promise to give all our clients high quality service and treat each client the same. The source of most of our work comes from word of mouth which gives us confidence that we are doing right.</p>
+                    <p>We have a 100% guarantee on all the services and products we provide to our clients.</p>
+                </div>
+                
+                <div class="about-text">
+                    <p>Averys Maintenance has been operating at client's best interest. We offer professional services and free consulting, advice, and free quotations from a team of experienced and diverse professionals.</p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <h4>BBBEE Level 1</h4>
+                            <p>100% Black Owned</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Experienced Team</h4>
+                            <p>Diverse Professionals</p>
+                        </div>
+                        
+                        <div class="highlight-item">
+                            <div class="highlight-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h4>Certified</h4>
+                            <p>Fully Licensed & Insured</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Images Above Services -->
+    <div class="floating-images">
+        <img src="WhatsApp Image 2025-12-09 at 08.04.49.jpeg" alt="Construction Site" class="floating-img floating-img-1">
+        <img src="WhatsApp Image 2025-12-09 at 08.03.48 (1).jpeg" alt="Planning Team" class="floating-img floating-img-2">
+        <img src="WhatsApp Image 2025-12-09 at 08.03.48.jpeg" alt="Painters Exterior" class="floating-img floating-img-3">
+    </div>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            
+            <div class="services-grid">
+                <!-- IT Supply Solutions -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>IT Supply Solutions</h3>
+                    <p>Tailored solutions to fuel your business's productivity</p>
+                    <ul>
+                        <li>Procurement and installation of cutting-edge hardware</li>
+                        <li>Network setup, maintenance, and cybersecurity support</li>
+                        <li>Managed IT services for smooth operations</li>
+                    </ul>
+                </div>
+                
+                <!-- Office Furniture & Supply -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-couch"></i>
+                    </div>
+                    <h3>Office Furniture & Supply</h3>
+                    <p>Creating productive and stylish work environments</p>
+                    <ul>
+                        <li>Ergonomic office chairs, desks, and workstations</li>
+                        <li>Customizable solutions for all office spaces</li>
+                        <li>Delivery, assembly, and layout planning</li>
+                    </ul>
+                </div>
+                
+                <!-- Construction Management -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3>Construction Management</h3>
+                    <p>Comprehensive construction solutions</p>
+                    <ul>
+                        <li>New installations and building from ground up</li>
+                        <li>Project planning and management</li>
+                        <li>Quality assurance and compliance</li>
+                    </ul>
+                </div>
+                
+                <!-- Maintenance Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Maintenance Services</h3>
+                    <p>24/7 day-to-day maintenance solutions</p>
+                    <ul>
+                        <li>Building maintenance & general upkeep</li>
+                        <li>Plumbing, roofing, and electrical maintenance</li>
+                        <li>Safety inspections and compliance</li>
+                    </ul>
+                </div>
+                
+                <!-- Electrical Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Electrical Services</h3>
+                    <p>Certified electrical installation and maintenance</p>
+                    <ul>
+                        <li>Residential and commercial electrical services</li>
+                        <li>Industrial electrical systems and 3-phase installations</li>
+                        <li>Fault finding and compliance checks</li>
+                    </ul>
+                </div>
+                
+                <!-- Handyman Services -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hammer"></i>
+                    </div>
+                    <h3>Handyman Services</h3>
+                    <p>No job is too small!</p>
+                    <ul>
+                        <li>All types of repairs and maintenance</li>
+                        <li>Painting, tiling, and renovations</li>
+                        <li>Dependable help when you need it</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Project Gallery</h2>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item" data-index="0">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.52 (2).jpeg" alt="Indoor Renovation (Before & After)" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Indoor Renovation</h4>
+                        <p>Before & After Transformation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.51 (1).jpeg" alt="Office Renovation Progress" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Office Renovation</h4>
+                        <p>Complete Transformation Process</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.49 (1).jpeg" alt="Construction Workers/Rebar" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Construction Team</h4>
+                        <p>Steel Framing Installation</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <img src="WhatsApp Image 2025-12-09 at 08.03.49.jpeg" alt="Construction Plans" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Project Planning</h4>
+                        <p>Blueprint Review & Strategy</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.53.jpeg" alt="Building/Brickwork Progress" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Brickwork Progress</h4>
+                        <p>Complete Building Construction</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.52 (1).jpeg" alt="Interior Woodwork/Flooring" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Interior Woodwork</h4>
+                        <p>Custom Flooring & Ceiling</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="6">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.50 (1).jpeg" alt="Drywall Installation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Drywall Installation</h4>
+                        <p>Industrial Space Partitioning</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="7">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.51.jpeg" alt="Industrial/Cable Installation" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Industrial Cable Work</h4>
+                        <p>Electrical Infrastructure</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="8">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.50.jpeg" alt="Retail/Painting" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Retail Exterior Painting</h4>
+                        <p>Commercial Building Upgrade</p>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="9">
+                    <img src="WhatsApp Image 2025-12-09 at 08.04.52.jpeg" alt="Outdoor Structure/Stairs" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <h4>Outdoor Structure</h4>
+                        <p>Tiered Seating Construction</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <div class="lightbox-nav">
+            <button class="lightbox-prev" id="lightboxPrev">&#10094;</button>
+            <button class="lightbox-next" id="lightboxNext">&#10095;</button>
+        </div>
+        <div class="lightbox-content">
+            <img src="" alt="" class="lightbox-img" id="lightboxImg">
+        </div>
+    </div>
+
+    <!-- Partners/Sponsors Section -->
+    <section class="partners" id="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Valued Partners & Clients</h2>
+            </div>
+            
+            <div class="partners-grid">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.20 (1).png" alt="Azwifarwi Secondary School" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.21 (1).png" alt="Eversheds Sutherland" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.22 (1).png" alt="University of Venda" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.21.png" alt="Multiflora Flower Market" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.22.png" alt="Marshal Cafe" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.19.png" alt="Gauteng Delivery" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.19 (1).png" alt="EDF Power Solutions" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.20.png" alt="Adivhaho Logistics" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.20 (2).png" alt="Afrihost" class="partner-logo">
+                <img src="WhatsApp Image 2025-12-08 at 23.46.21 (2).png" alt="Khazwi Security Services" class="partner-logo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>47 1st Avenue, Kew, Sandton</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Contact Number</h4>
+                                <p>+27 (74) 610-1564</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>averysmaintenance.info@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="https://wa.me/message/DVSCJ5Z5PBZUL1" class="social-link" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://instagram.com/avery_maintenance?igshid=OGQ5ZDc2ODk2ZA==" class="social-link" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100064155606689&mibextid=2JQ9oc" class="social-link" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3580.187275134269!2d28.085819315028233!3d-26.190073783444153!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1e950dcd57aac47f%3A0x8e9b5c5a5b5c5a5b!2s47%201st%20Ave%2C%20Kew%2C%20Sandton%2C%202099!5e0!3m2!1sen!2sza!4v1649782345678!5m2!1sen!2sza" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <div class="footer-logo">AVERY MAINTENANCE</div>
+                    <p>Providing expert construction, supply and maintenance services to public and private sectors for over 3 years.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#gallery">Gallery</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#services">IT Supply Solutions</a></li>
+                        <li><a href="#services">Office Furniture</a></li>
+                        <li><a href="#services">Construction Management</a></li>
+                        <li><a href="#services">Maintenance Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 47 1st Avenue, Kew, Sandton</p>
+                    <p><i class="fas fa-phone"></i> +27 (74) 610-1564</p>
+                    <p><i class="fas fa-envelope"></i> averysmaintenance.info@gmail.com</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Avery's Maintenance (Pty) Ltd. All Rights Reserved. | Registration No: 2023/955742/07</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Icon -->
+    <a href="https://wa.me/message/DVSCJ5Z5PBZUL1" target="_blank" class="floating-icon floating-whatsapp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Floating Facebook Icon -->
+    <a href="https://www.facebook.com/profile.php?id=100064155606689&mibextid=2JQ9oc" target="_blank" class="floating-icon floating-facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.08)';
+            }
+        });
+
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightboxImg');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        
+        let currentIndex = 0;
+        
+        // Array of gallery images
+        const galleryImages = [
+            'WhatsApp Image 2025-12-09 at 08.04.52 (2).jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.51 (1).jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.49 (1).jpeg',
+            'WhatsApp Image 2025-12-09 at 08.03.49.jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.53.jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.52 (1).jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.50 (1).jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.51.jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.50.jpeg',
+            'WhatsApp Image 2025-12-09 at 08.04.52.jpeg'
+        ];
+        
+        // Open lightbox
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                currentIndex = index;
+                lightboxImg.src = galleryImages[currentIndex];
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+        
+        // Close lightbox
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Close lightbox when clicking outside image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Previous image
+        lightboxPrev.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentIndex];
+        });
+        
+        // Next image
+        lightboxNext.addEventListener('click', (e) => {
+            e.stopPropagation();
+            currentIndex = (currentIndex + 1) % galleryImages.length;
+            lightboxImg.src = galleryImages[currentIndex];
+        });
+        
+        // Navigate with arrow keys
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'ArrowLeft') {
+                    currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+                    lightboxImg.src = galleryImages[currentIndex];
+                } else if (e.key === 'ArrowRight') {
+                    currentIndex = (currentIndex + 1) % galleryImages.length;
+                    lightboxImg.src = galleryImages[currentIndex];
+                }
+            }
+        });
+    </script>
+</body>
+</html>

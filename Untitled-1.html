@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Avery Maintenance - Professional Construction, Supply, and Maintenance Services in Sandton. Level 1 BBBEE.">
+    <title>Avery Maintenance (Pty) Ltd</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-color: #008B8B; /* Dark Cyan/Teal from Logo */
+            --secondary-color: #2c3e50; /* Dark Blue/Grey */
+            --accent-color: #e74c3c; /* Alert/Action color */
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --shadow: 0 5px 15px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo img {
+            height: 60px; /* Adjust based on your logo file */
+            width: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            color: var(--secondary-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .header-contact {
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Mobile Menu Button */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            /* USING USER UPLOADED BACKGROUND IMAGE */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('WhatsApp_Image_2025-12-08_at_23.46.24_upscaled.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            padding-top: 80px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: var(--white);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .btn-main {
+            padding: 15px 35px;
+            background: var(--primary-color);
+            color: var(--white);
+            border-radius: 5px;
+            font-weight: 700;
+            transition: var(--transition);
+            display: inline-block;
+            animation: fadeInUp 1s ease 0.6s forwards;
+            opacity: 0;
+        }
+
+        .btn-main:hover {
+            background: #006666;
+            transform: translateY(-3px);
+        }
+
+        /* --- SECTIONS GENERAL --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title-wrapper {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-text {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-left: 5px solid var(--primary-color);
+        }
+
+        /* --- SERVICES SECTION (GRID) --- */
+        .bg-light { background: var(--light-bg); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-top: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-top: 3px solid var(--primary-color);
+        }
+
+        /* 3D FLOATING ICONS */
+        .icon-3d {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            /* 3D Effect using text-shadow */
+            text-shadow: 1px 1px 0 #ccc, 2px 2px 0 #c9c9c9, 3px 3px 0 #bbb, 4px 4px 0 #b9b9b9, 5px 5px 0 #aaa, 6px 6px 1px rgba(0,0,0,.1), 0 0 5px rgba(0,0,0,.1), 1px 1px 3px rgba(0,0,0,.3);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .service-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .service-card ul {
+            text-align: left;
+            margin-top: 15px;
+            color: var(--text-light);
+        }
+
+        .service-card ul li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .service-card ul li::before {
+            content: '\f00c'; /* Check icon */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* --- CLIENTS / SPONSORS GRID --- */
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 40px;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            height: auto;
+            max-height: 80px;
+            filter: grayscale(100%);
+            transition: var(--transition);
+            opacity: 0.7;
+        }
+
+        .client-logo img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        /* --- TEAM GRID --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .team-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: #ddd; /* Placeholder color */
+        }
+
+        .team-info {
+            padding: 20px;
+        }
+
+        .team-info h4 { color: var(--primary-color); margin-bottom: 5px; }
+        .team-info h5 { font-size: 0.9rem; color: var(--text-light); font-weight: 600; margin-bottom: 10px; }
+        .team-info p { font-size: 0.85rem; }
+
+        /* --- CONTACT SECTION --- */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-info-box {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .contact-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            background: rgba(255,255,255,0.2);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+        }
+        
+        .contact-item a { color: var(--white); }
+
+        .map-box {
+            height: 100%;
+            min-height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--secondary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        /* --- FLOATING SOCIAL ICONS --- */
+        .floating-socials {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .float-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            animation: bounceIn 1s;
+        }
+
+        .float-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .float-whatsapp { background-color: #25d366; }
+        .float-facebook { background-color: #1877f2; }
+
+        /* --- ANIMATIONS --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0); }
+            80% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            }
+            
+            .nav-links.active { display: flex; }
+            .menu-toggle { display: block; }
+            .hero-content h1 { font-size: 2rem; }
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <img src="WhatsApp_Image_2025-12-08_at_23.46.23_(2)_upscaled_(1).png" alt="Avery Maintenance Logo">
+            </div>
+            <nav>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#clients">Clients</a></li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-contact">
+                <i class="fas fa-phone-alt"></i> +27 (74) 610-1564
+                <div class="menu-toggle" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>It's Perfect With Us</h1>
+            <p>Your Expert Partner in Construction Management, Supply, and Maintenance.</p>
+            <a href="#contact" class="btn-main">Get a Free Quote</a>
+        </div>
+    </section>
+
+    <section id="about" class="section-padding">
+        <div class="container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Who We Are</h2>
+            </div>
+            <div class="about-text">
+                <p>
+                    AVERYS MAINTENANCE HAS DIFFERENT DEPARTMENTS: <strong>SUPPLY, CONSTRUCTION MANAGEMENT AND MAINTENANCE</strong>. 
+                    FOR MORE THAN 3 YEARS, DAY TO DAY GENERAL MAINTENANCE, OFFICE EQUIPMENT SUPPLY AND CONSTRUCTION MAINTENANCE. 
+                    OUR COMPANY HAS BEEN PROVIDING EXPERT SERVICE TO CUSTOMERS IN THE PUBLIC AND PRIVATE SECTORS. 
+                    WORKING TO THE HIGHEST INDUSTRY STANDARDS, AVERY MAINTENANCE HAS BEEN OPERATING AT CLIENT’S BEST INTEREST. 
+                    WE OFFER PROFESSIONAL SERVICES AND FREE CONSULTING, ADVICE, AND FREE QUOTATIONS FROM A TEAM OF EXPERIENCED AND DIVERSE PROFESSIONALS.
+                </p>
+                <br>
+                <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px;">
+                    <span style="background: #eee; padding: 10px 20px; border-radius: 20px; font-weight: bold;"><i class="fas fa-award"></i> Level 1 BBBEE</span>
+                    <span style="background: #eee; padding: 10px 20px; border-radius: 20px; font-weight: bold;"><i class="fas fa-hard-hat"></i> NHBRC Registered</span>
+                    <span style="background: #eee; padding: 10px 20px; border-radius: 20px; font-weight: bold;"><i class="fas fa-check-circle"></i> 100% Black Owned</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section-padding bg-light">
+        <div class="container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Our Professional Services</h2>
+                <p>Tailored solutions to fuel your business's productivity and comfort.</p>
+            </div>
+
+            <div class="services-grid">
+                
+                <div class="service-card">
+                    <i class="fas fa-laptop-code icon-3d"></i>
+                    <h3>IT Supply Solutions</h3>
+                    <p>Procurement and installation of cutting-edge hardware and software.</p>
+                    <ul>
+                        <li>Computers, servers, printers</li>
+                        <li>Network setup & cybersecurity</li>
+                        <li>Managed IT services</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-chair icon-3d"></i>
+                    <h3>Office Furniture</h3>
+                    <p>Ergonomic setups for comfort and efficiency.</p>
+                    <ul>
+                        <li>Chairs, desks, workstations</li>
+                        <li>Meeting rooms & reception areas</li>
+                        <li>Layout planning & assembly</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-building icon-3d"></i>
+                    <h3>Building Maintenance</h3>
+                    <p>General upkeep of structure and systems.</p>
+                    <ul>
+                        <li>Painting & Waterproofing</li>
+                        <li>Roofing, Skylights & Gutters</li>
+                        <li>Complex maintenance</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-faucet icon-3d"></i>
+                    <h3>Plumbing & Wet Works</h3>
+                    <p>PIRB Registered professional plumbing services.</p>
+                    <ul>
+                        <li>Water supply & drainage</li>
+                        <li>Burst geysers (Insurance claims)</li>
+                        <li>Bathroom renovations</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-bolt icon-3d"></i>
+                    <h3>Electrical Services</h3>
+                    <p>Residential, Commercial & Industrial.</p>
+                    <ul>
+                        <li>COC Compliance checks</li>
+                        <li>Fault finding & Wiring</li>
+                        <li>High-voltage & 3-Phase systems</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <i class="fas fa-broom icon-3d"></i>
+                    <h3>Cleaning & Grounds</h3>
+                    <p>Maintaining pristine environments inside and out.</p>
+                    <ul>
+                        <li>Deep & Daily Cleaning</li>
+                        <li>Landscaping & Gardening</li>
+                        <li>Pest Control</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="section-padding">
+        <div class="container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Our Valued Clients</h2>
+                <p>Trusted by leading organizations in public and private sectors.</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo" title="Multiflora"><img src="WhatsApp Image 2025-12-08 at 23.46.21.png" alt="Multiflora"></div>
+                <div class="client-logo" title="Adivhah"><img src="WhatsApp Image 2025-12-08 at 23.46.20.png" alt="Adivhah"></div>
+                <div class="client-logo" title="Afrihost"><img src="WhatsApp Image 2025-12-08 at 23.46.20 (2).png" alt="Afrihost"></div>
+                <div class="client-logo" title="Gauteng Delivery"><img src="WhatsApp Image 2025-12-08 at 23.46.19.png" alt="Gauteng Delivery"></div>
+                <div class="client-logo" title="EDF Power"><img src="WhatsApp Image 2025-12-08 at 23.46.19 (1).png" alt="EDF Power"></div>
+                <div class="client-logo" title="Azwifarwi School"><img src="WhatsApp Image 2025-12-08 at 23.46.20 (1).png" alt="Azwifarwi School"></div>
+                <div class="client-logo"><h3>ENGEN</h3></div>
+                <div class="client-logo"><h3>Dept. Public Works</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="section-padding bg-light">
+        <div class="container">
+            <div class="title-wrapper">
+                <h2 class="section-title">Our Leaders</h2>
+            </div>
+            <div
